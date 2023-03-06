@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ToDo</title>
+</head>
+<body>
+    <header class="header"></header>
+    <main>
+        <div class="todo-wrap">
+            <div class="todo-header">
+                <h1 class="todo-header_text">T O D O</h1>
+                <h2 class="todo-counter">0 items</h2>
+            </div>
+            <div class="todo-add-panel">
+                <input type="text" class="todo-text_input" placeholder="create new tab" maxlength="50">
+                <button class="todo-add_btn"></button>
+            </div>
+            <div class="todo-field-items">
+                <ul class="todo-items list">
+                </ul>
+                <div class="todo-filter">
+                    <ul class="todo-filter-items list">
+                        <li class="todo-filter-item active" id="all">all</li>
+                        <li class="todo-filter-item" id="active">active</li>
+                        <li class="todo-filter-item" id="complete">complete</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

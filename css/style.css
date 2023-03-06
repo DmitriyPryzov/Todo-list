@@ -1,0 +1,267 @@
+@font-face {
+    font-family: 'San Francisco';
+    src: url('../fonts/SFUIText-Heavy.eot');
+    src: url('../fonts/SFUIText-Heavy.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/SFUIText-Heavy.woff') format('woff'),
+    url('../fonts/SFUIText-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'San Francisco';
+    src: url('../fonts/SFUIDisplay-Thin.eot');
+    src: url('../fonts/SFUIDisplay-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/SFUIDisplay-Thin.woff') format('woff'),
+    url('../fonts/SFUIDisplay-Thin.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'San Francisco';
+    src: url('../fonts/SFUIText-Medium.eot');
+    src: url('../fonts/SFUIText-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/SFUIText-Medium.woff') format('woff'),
+    url('../fonts/SFUIText-Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box; 
+    font-size: 25px;
+}
+
+html {
+    font-family: San Francisco, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #131313;
+}
+
+.header {
+    width: 100%;
+    height: 450px;
+    background-image: url("../img/background.jpg");
+}
+
+main {
+    width: 100%;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-wrap {
+    position: absolute;
+    width: 700px;
+    max-width: 750px;
+    transform: translateY(-265px);
+}
+.todo-header {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo-header_text {
+    margin: 0;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 70px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.todo-counter {
+    font-size: 32px;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+.todo-add-panel {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    background: #232B31;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+}
+
+.todo-text_input {
+    font-family: San Francisco, sans-serif;
+    margin-left: 30px;
+    width: 600px;
+    height: 45px;
+    background-color: #232B31;
+    border: none;
+    border-bottom: 1px solid #474747;
+    outline: none;
+    color: #838383;
+    font-weight: 300;
+}
+.todo-add_btn {
+    position: absolute;
+    right: 20px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("../img/icons/add.svg");
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.todo-add_btn:hover {
+    background-color: rgb(44, 44, 44)
+}
+
+.todo-field-items {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    min-height: 480px;
+    background-color: #232B31;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    padding-bottom: 80px;
+}
+.todo-items {
+    width: 100%;
+}
+.todo-item {
+    /* position: relative; */
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #3C3C3C;
+    transition: all .3s;
+}
+.todo-item:hover {
+    background-color: #1d2429;
+    transition: all .3s;
+}
+
+.todo-item_text {
+    line-height: 30px;
+    font-weight: 300;
+    color: #9F9F9F;
+    margin-left: 85px;
+    cursor: pointer;
+}
+
+.checkbox_btn {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.style-checkbox {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-left: -60px;
+    
+}
+.checkbox_btn:checked + .style-checkbox::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+
+}
+
+.todo-item-remove_btn {
+    position: absolute;
+    right: 20px;
+
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("../img/icons/remove.svg");
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.todo-filter {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    border-top: 2px solid #3C3C3C;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-filter-item {
+    display: inline;
+    margin-right: 50px;
+    line-height: 34px;
+    color: #9F9F9F;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.complete {
+    text-decoration: line-through;
+    opacity: .5;
+}
+.active {
+    color: #40A4AA; 
+}
+
+@media (max-width: 800px) {
+    * {
+        font-size: 20px;
+    }
+    .todo-wrap {
+        width: 600px;
+    }
+    .todo-item_text {
+        margin-left: 60px;
+    }
+    .style-checkbox {
+        margin-left: -40px;
+    }
+    .todo-filter-item {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 660px) {
+    .todo-wrap {
+        width: 500px;
+    }
+}
